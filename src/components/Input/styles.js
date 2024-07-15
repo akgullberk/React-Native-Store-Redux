@@ -9,5 +9,10 @@ export default styles = StyleSheet.create({
     margin: windowHeight * 0.01,
     backgroundColor: 'white',
     borderRadius: windowHeight * 0.01,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  input: {
+    flex: 1,
   },
 });

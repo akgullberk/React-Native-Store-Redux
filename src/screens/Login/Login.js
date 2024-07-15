@@ -4,6 +4,8 @@ import styles from './styles';
 import {Input, Button} from '../../components';
 import {Formik} from 'formik';
 
+
+
 const Login = () => {
   function handleLogin(values) {
     console.log(values);
@@ -25,11 +27,14 @@ const Login = () => {
               placeholder="Kullanıcı adınızı giriniz..."
               value={values.username}
               onType={handleChange('username')}
+              iconName={'account'}
             />
             <Input
               placeholder="Şifrenizi giriniz..."
               value={values.password}
               onType={handleChange('password')}
+              iconName={'lock'}
+              isSecure
             />
             <Button text="Giriş Yap" onPress={handleSubmit} />
           </View>
