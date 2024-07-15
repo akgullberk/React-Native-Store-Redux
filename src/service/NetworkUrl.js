@@ -2,4 +2,6 @@ const BaseUrl = 'https://fakestoreapi.com';
 
 const getProduct = '/products';
 
-export {getProduct, BaseUrl};
+const getUserLogin = '/auth/login';
+
+export {getProduct, BaseUrl,getUserLogin};

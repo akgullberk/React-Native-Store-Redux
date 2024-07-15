@@ -20,4 +20,25 @@ const get = urlOption => {
     });
 };
 
-export {get};
+const post = (urlOption, data) => {
+  return fetch(BaseUrl + urlOption, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: 'apikey 2IFdV34EFzXuyQxeY9BWut:2r90movyzE3x27lWBPgouN',
+    },
+    body: JSON.stringify(data),
+  })
+  .then(res => {
+    if (!res.ok) {
+      throw new Error('Kullanıcı bulunamadı');
+    }
+    return res.json();
+  })
+  .catch(err => {
+    console.log('Error', err);
+    throw err;
+  });
+};
+
+export {get,post};

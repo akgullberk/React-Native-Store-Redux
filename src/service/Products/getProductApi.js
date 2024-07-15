@@ -1,5 +1,5 @@
 import {getProduct} from '../NetworkUrl';
-import {get} from '../main';
+import {get,post} from '../main';
 
 const getProductApi = () => {
   const productUrl = getProduct;
