@@ -1,3 +1,79 @@
+REACT NATİVE STORE REDUX
+--------------------------------
+
+# Overview
+
+Store Application is a React Native app that showcases a simple store with login functionality, product listing, and product detail pages. It utilizes Redux for state management and includes an API for fetching product details and user information.
+
+-------------------------------------------------------------
+
+# Features
+
+- Login: Allows users to log in using their credentials.
+- Product Listing: Displays a list of products fetched from an API.
+- Product Details: Shows detailed information about a selected product.
+- ------------------------
+
+# Technologies
+
+React Native,
+Redux,
+Formik,
+API,
+React Navigation,
+Native Components (e.g., ActivityIndicator, FlatList, Image, Text)
+
+------------------------------------
+# Usage
+
+* Login
+  
+Path: /login
+
+Description: Users can log in using their username and password. Upon successful login, users are redirected to the product listing page.
+
+* Product Listing
+  
+Path: /products
+
+Description: Displays a list of products. Users can navigate to the product details page by selecting a product.
+
+* Product Details
+  
+Path: /detail
+
+Description: Shows detailed information about a specific product.
+
+-----------------------------------------
+
+# Code Explanation
+
+* Detail.js
+  
+Purpose: Fetches and displays detailed information about a product based on the provided ID.
+Key Components:
+useEffect: Fetches product details when the component mounts.
+getDetailApi: API call function to retrieve product details.
+Loading: Displays a loading spinner while data is being fetched.
+
+* Login.js
+  
+Purpose: Handles user login functionality.
+Key Components:
+Formik: Used for form handling and validation.
+postUserApi: API call function to authenticate the user.
+useDispatch: Dispatches login actions to the Redux store.
+ActivityIndicator: Shows a loading spinner during the login process.
+
+* Product.js
+  
+Purpose: Fetches and displays a list of products.
+Key Components:
+useEffect: Fetches product data when the component mounts.
+getProductApi: API call function to retrieve the list of products.
+ProductCard: Component for displaying individual product details.
+FlatList: Efficiently renders the list of products.
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
