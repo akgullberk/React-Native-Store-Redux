@@ -1,7 +1,7 @@
 import {ActivityIndicator, Alert, Image, Text, View} from 'react-native';
 import React, { useState } from 'react';
 import styles from './styles';
-import {Input, Button} from '../../components';
+import {Button, Input} from '../../components';
 import {Formik} from 'formik';
 import { postUserApi } from '../../service/User/postUserApi';
 import { useDispatch } from 'react-redux';

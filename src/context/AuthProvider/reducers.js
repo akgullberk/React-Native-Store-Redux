@@ -13,6 +13,13 @@ export default function reducers(state, action) {
                 ...state,
                 user
             };
+        case "REMOVE_USER":
+            AsyncStorage.removeItem("@USER");
+            return {
+                ...state,
+                user: null
+            };
+
         
         default:
             return state;

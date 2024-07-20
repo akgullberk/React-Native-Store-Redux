@@ -2,7 +2,7 @@ import {ActivityIndicator, FlatList, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import styles from './styles';
 import {getProductApi} from '../../service';
-import {Button, Loading, ProductCard} from '../../components';
+import {Loading, ProductCard} from '../../components';
 import { useDispatch } from 'react-redux';
 
 const Product = ({navigation}) => {
@@ -38,7 +38,7 @@ const Product = ({navigation}) => {
   }
   return (
     <View>
-      <Button text="LogOut" onPress={() => dispatch({type: 'SET_USER', payload: {user: null}})} />
+      
       <FlatList data={data2} renderItem={renderProduct2} />
     </View>
   );
