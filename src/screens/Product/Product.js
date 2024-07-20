@@ -2,11 +2,13 @@ import {ActivityIndicator, FlatList, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import styles from './styles';
 import {getProductApi} from '../../service';
-import {Loading, ProductCard} from '../../components';
+import {Button, Loading, ProductCard} from '../../components';
+import { useDispatch } from 'react-redux';
 
 const Product = ({navigation}) => {
   const [data2, setData2] = useState([]);
   const [loading, setLoading] = useState([]);
+  const dispatch = useDispatch(); 
 
   useEffect(() => {
     berk();
@@ -36,6 +38,7 @@ const Product = ({navigation}) => {
   }
   return (
     <View>
+      <Button text="LogOut" onPress={() => dispatch({type: 'SET_USER', payload: {user: null}})} />
       <FlatList data={data2} renderItem={renderProduct2} />
     </View>
   );

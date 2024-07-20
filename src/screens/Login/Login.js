@@ -4,6 +4,7 @@ import styles from './styles';
 import {Input, Button} from '../../components';
 import {Formik} from 'formik';
 import { postUserApi } from '../../service/User/postUserApi';
+import { useDispatch } from 'react-redux';
 
 
 
@@ -11,6 +12,7 @@ const Login = ({navigation}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const dispatch = useDispatch();
 
   const handleLogin = async (values) => {
     setLoading(true);
@@ -20,6 +22,7 @@ const Login = ({navigation}) => {
       setData(response); // Giriş başarılıysa yanıtı sakla
       console.log('Giriş başarılı', response);
       Alert.alert('Giriş Başarılı', 'Giriş işlemi başarılı!');
+      dispatch({ type: 'SET_USER', payload: { user} });
       navigation.navigate("Product")
       
     } catch (error) {
@@ -27,10 +30,12 @@ const Login = ({navigation}) => {
       console.error('Giriş sırasında hata:', error);
       Alert.alert('Giriş Hatası', error.message || 'Giriş sırasında bir hata oluştu');
     } finally {
-      setLoading(false); // İşlem bittiğinde yükleniyor durumunu kapat
+      setLoading(false); 
       
     }
   };
+
+  
 
   return (
     <View style={styles.container}>
@@ -69,3 +74,26 @@ const Login = ({navigation}) => {
 };
 
 export default Login;
+
+const user = {
+  "address": {
+    "geolocation": {
+      "lat": "-37.3159",
+      "long": "81.1496"
+    },
+    "city": "kilcoole",
+    "street": "new road",
+    "number": 7682,
+    "zipcode": "12926-3874"
+  },
+  "id": 1,
+  "email": "john@gmail.com",
+  "username": "johnd",
+  "password": "m38rmF$",
+  "name": {
+    "firstname": "john",
+    "lastname": "doe"
+  },
+  "phone": "1-570-236-7033",
+  "__v": 0
+}
