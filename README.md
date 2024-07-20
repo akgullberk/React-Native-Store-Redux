@@ -74,6 +74,13 @@ getProductApi: API call function to retrieve the list of products.
 ProductCard: Component for displaying individual product details.
 FlatList: Efficiently renders the list of products.
 
+# Screenshots
+
+
+
+https://github.com/user-attachments/assets/1ad46012-284c-4296-93d4-37a8b6bbf4a7
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
